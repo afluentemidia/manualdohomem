@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual do Homem: O Guia Definitivo para Conexões Reais</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS - DESIGN FINAL - CORRIGIDO E APRIMORADO */
+        :root {
+            --cor-fundo: #f1faee;
+            --cor-texto: #1d3557;
+            --cor-primaria: #457b9d;
+            --cor-destaque: #e63946;
+            --cor-branco: #ffffff;
+            --sombra-card: 0 8px 30px rgba(0, 0, 0, 0.07);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            color: var(--cor-texto);
+            background-color: var(--cor-fundo);
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- HEADER --- */
+        header {
+            background-color: var(--cor-texto);
+            color: var(--cor-branco);
+            padding: 70px 0;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.4em;
+            font-weight: 700;
+            margin: 0 0 15px 0;
+            line-height: 1.3;
+        }
+        header p {
+            font-size: 1.1em;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.85;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--cor-destaque);
+            color: var(--cor-branco);
+            padding: 16px 40px;
+            font-size: 1.1em;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(230, 57, 70, 0.4);
+            transform: translateY(0);
+        }
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.5);
+        }
+
+        /* --- SEÇÕES E CARDS --- */
+        section {
+            padding: 80px 0;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-header h2 {
+            font-size: 2.1em;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            color: var(--cor-texto);
+        }
+        .section-header p {
+            font-size: 1.1em;
+            color: var(--cor-primaria);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .cards-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .card {
+            background: var(--cor-branco);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--sombra-card);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        }
+        .card svg {
+            width: 32px;
+            height: 32px;
+            color: var(--cor-destaque);
+            margin-bottom: 15px;
+        }
+        .card h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+        }
+        .card p {
+            margin: 0;
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        /* --- CONTEÚDO (BENEFÍCIOS) --- */
+        #conteudo { background-color: var(--cor-branco); }
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+        }
+        .benefits-list li {
+            display: flex;
+            align-items: flex-start;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        .benefits-list svg {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            color: var(--cor-primaria);
+            margin-right: 15px;
+            margin-top: 4px;
+        }
+
+        /* --- OFERTA --- */
+        .offer-box {
+            background: var(--cor-texto);
+            color: var(--cor-branco);
+            padding: 50px;
+            text-align: center;
+            border-radius: 16px;
+        }
+        .offer-box p { opacity: 0.9; }
+        .old-price { font-size: 1.2em; text-decoration: line-through; opacity: 0.6; }
+        .new-price {
+            font-size: 3.5em;
+            font-weight: 700;
+            color: var(--cor-branco);
+            margin: 5px 0;
+        }
+        .installments {
+            font-size: 1.1em;
+            background-color: var(--cor-primaria);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+        .access-note { font-size: 0.9em; opacity: 0.7; margin-top: 20px; }
+
+        /* --- GARANTIA E FAQ --- */
+        #garantia { background-color: var(--cor-branco); }
+        .guarantee-box { text-align: center; }
+        .guarantee-box svg { width: 60px; height: 60px; color: var(--cor-primaria); margin-bottom: 15px; }
+        .guarantee-box h3 { font-size: 1.6em; }
+        .faq-item { margin-bottom: 15px; }
+        .faq-item details { background: var(--cor-branco); border-radius: 8px; box-shadow: var(--sombra-card); }
+        .faq-item summary { font-size: 1.1em; font-weight: 600; padding: 20px; cursor: pointer; outline: none; list-style: none; /* Remove a seta padrão */ }
+        .faq-item summary::-webkit-details-marker { display: none; /* Remove a seta padrão no Chrome */ }
+        .faq-item summary::after { content: '+'; float: right; font-size: 1.5em; transition: transform 0.2s; }
+        .faq-item details[open] summary::after { transform: rotate(45deg); }
+        .faq-item div { padding: 0 20px 20px 20px; border-top: 1px solid #eee; }
+
+        /* --- FOOTER --- */
+        footer { text-align: center; padding: 40px; background-color: #e9ecef; color: #6c757d; }
+
+        /* --- ANIMAÇÃO --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 768px) {
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+            header h1 { font-size: 2em; }
+            .section-header h2 { font-size: 1.8em; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Pare de Tentar Adivinhar o Que Ele Pensa</h1>
+            <p>O guia definitivo para decodificar a mente masculina, entender as emoções por trás do silêncio e construir a conexão profunda que você sempre desejou.</p>
+            <a href="https://pay.cakto.com.br/3bux2a4_366767" class="cta-button">QUERO MINHA TRANSFORMAÇÃO AGORA</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="problema" class="reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Esta é a sua realidade hoje?</h2>
+                    <p>Você ama o homem da sua vida, mas se sente constantemente frustrada e confusa com atitudes que simplesmente não fazem sentido.</p>
+                </div>
+                <div class="cards-container">
+                    <div class="card">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h7.5M8.25 12h7.5m-7.5 5.25h7.5M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" /></svg>
+                        <h3>Respostas Vazias</h3>
+                        <p>Você se abre, faz uma pergunta importante, e a resposta é um frustrante "nada".</p>
+                    </div>
+                    <div class="card">
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>
+                        <h3>A "Síndrome do Consertador"</h3>
+                        <p>Você só quer desabafar e ser ouvida, mas ele imediatamente pula para o modo de "solução de problemas", invalidando o que você sente.</p>
+                    </div>
+                    <div class="card">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zm-7.518-.267A8.25 8.25 0 1120.25 10.5M8.288 14.212A5.25 5.25 0 1117.25 10.5" /></svg>
+                        <h3>A Fuga para a "Caverna"</h3>
+                        <p>Após um dia estressante ou uma discussão, ele se retira para uma "caverna" mental, e você interpreta essa necessidade de espaço como uma dolorosa rejeição.</p>
+                    </div>
+                    <div class="card">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-5.25 3h9M3 12a9 9 0 1118 0 9 9 0 01-18 0z" /></svg>
+                        <h3>Silêncio que Machuca</h3>
+                        <p>Em momentos de tensão, ele fica em silêncio absoluto, não por maldade, mas por uma "inundação emocional" que o impede de se expressar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="conteudo" class="reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2>O que você vai dominar com este guia:</h2>
+                    <p>Este manual é a sua ponte para a mente e o coração masculino. Você não vai aprender "truques", vai adquirir compreensão real.</p>
+                </div>
+                <ul class="benefits-list">
+                    <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.311a7.5 7.5 0 01-7.5 0c-1.255 0-2.42.256-3.5.698V7.26c1.08.441 2.245.698 3.5.698a7.5 7.5 0 017.5 0c1.255 0 2.42-.256 3.5-.698v7.478c-1.08.441-2.245.698-3.5.698z" /></svg>
+                        <div><strong>A Arte da Comunicação Eficaz:</strong> Aprenda a fazer perguntas específicas e diretas que o cérebro masculino realmente entende, em vez de perguntas abertas que geram frustração.</div>
+                    </li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
+                        <div><strong>As Linguagens Secretas do Afeto:</strong> Decodifique como ele demonstra amor através de ações concretas e presença física, para que você possa finalmente enxergar e valorizar o carinho dele.</div>
+                    </li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M3.75 12a8.25 8.25 0 0114.79-4.093l.36-1.802m-1.354 4.093a8.25 8.25 0 01-4.093 14.79l-1.802.359m4.093-1.354a8.25 8.25 0 01-14.79-4.093l-.359-1.802m1.354-4.093A8.25 8.25 0 0112 3.75m-4.093 1.354l1.802-.359m-4.093 14.79l1.802.359" /></svg>
+                        <div><strong>A Chave para a Segurança Emocional:</strong> Descubra os 4 pilares (aceitação, respeito, lealdade e autonomia) que criam um ambiente seguro para que ele possa se abrir e mostrar sua vulnerabilidade.</div>
+                    </li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" /></svg>
+                        <div><strong>O Código do Respeito:</strong> Entenda por que, segundo pesquisas, 74% dos homens prefeririam sentir-se sozinhos e desrespeitados a se sentirem sozinhos e não amados.</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="oferta" class="reveal">
+            <div class="container">
+                <div class="offer-box">
+                    <h2>Aqui está o seu plano de ação</h2>
+                    <p>Receba acesso imediato ao guia completo de 60 páginas e comece a construir a conexão que você merece.</p>
+                    <p class="old-price">De R$ 97,00</p>
+                    <p class="new-price">Por apenas R$ 47,00</p>
+                    <p class="installments">(ou 12x de R$ 5,47)</p>
+                    <a href="https://pay.cakto.com.br/3bux2a4_366767" class="cta-button">COMPRAR AGORA E TRANSFORMAR MEUS RELACIONAMENTOS</a>
+                    <p class="access-note">Acesso imediato ao E-book em PDF. Compra 100% segura.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="garantia" class="reveal">
+             <div class="container guarantee-box">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286zm0 13.036h.008v.008H12v-.008z" /></svg>
+                <h3>Garantia Blindada de 7 Dias</h3>
+                <p>Seu risco é zero. Você tem 7 dias completos para ler o manual. Se você não sentir que ele abriu sua mente e te deu ferramentas práticas para melhorar seus relacionamentos, basta enviar um e-mail. Devolvemos 100% do seu dinheiro, sem perguntas.</p>
+            </div>
+        </section>
+
+        <section id="faq" class="reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Perguntas Frequentes</h2>
+                </div>
+                <div class="faq-item">
+                    <details>
+                        <summary>Este e-book serve para qualquer tipo de relacionamento?</summary>
+                        <div><p>Sim. Embora muitos exemplos se apliquem a relações amorosas, os princípios foram criados para fortalecer laços familiares ou de amizade com os homens que você valoriza.</p></div>
+                    </details>
+                </div>
+                <div class="faq-item">
+                    <details>
+                        <summary>Isso não é um tipo de manipulação?</summary>
+                        <div><p>De forma alguma. O objetivo não é manipular, mas promover a compreensão mútua, o respeito e a conexão autêntica, onde ambos se beneficiam e constroem uma relação mais saudável.</p></div>
+                    </details>
+                </div>
+                 <div class="faq-item">
+                    <details>
+                        <summary>E se o meu parceiro não estiver disposto a mudar?</summary>
+                        <div><p>A verdadeira transformação começa com você. Ao mudar sua forma de compreender e se comunicar, você cria um novo ambiente relacional que muitas vezes inspira a mudança no outro. O guia também incentiva que você compartilhe suas descobertas com ele, criando um diálogo.</p></div>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ademir Rodrigues. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.15
+            });
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
+</body>
+</html>
